@@ -10,19 +10,16 @@ func main() {
 	log.SetPrefix("main: ")
 	log.SetFlags(0)
 
-	message, err := CreateMessage("Ben")
+	names := []string{"Frodo", "Bilbo", "Sam"}
+	messages, err := CreateMessages(names)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	color.White(message)
+	fmt.Println(messages)
 
-	result, err := Divide(10, 0)
-
-	if err != nil {
-		log.Fatal(err)
+	for _, message := range messages {
+		color.Green(message)
 	}
-
-	color.White(fmt.Sprintf("Answer is: %d", result))
 }
