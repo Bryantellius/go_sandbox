@@ -52,8 +52,18 @@ var extraCharacters = make([]string, 3) // creates a slice of length 3, capacity
 var chasePack = []string{"Aragorn", "Legolas", "Gimli"}
 ```
 
+Slices can also contain slice values to create _jagged arrays_ (collections with collection values of different lengths).
+
+### The `slices` Package
+
+The `slices` package has many helpful functions for working with slices.
+
 ## Maps
 
 ## `len()`
 
 The `len()` function is an easy way to find the length of an array, slice, or map. Pass the data structure to the function and it will return the length.
+
+## `copy()`
+
+Arrays, slices and maps can be copied with the `copy()`
