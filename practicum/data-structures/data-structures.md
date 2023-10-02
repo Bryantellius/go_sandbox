@@ -60,6 +60,49 @@ The `slices` package has many helpful functions for working with slices.
 
 ## Maps
 
+`Maps` are data collections that map keys to values.
+
+A map can be created with the `make()` function and providing the key/value types with `map[key_type]value_type` syntax.
+
+```go
+var teamScores map[string]int = make(map[string]int)
+```
+
+Map values can be accessed and assigned similar to arrays and slice syntax:
+
+```go
+teamScores["Ben"] = 1
+teamScores["Kane"] = 6
+teamScores["Kevin"] = 8
+teamScores["BG"] = 12
+teamScores["Andrew"] = 14
+```
+
+Maps can also be created as _map literals_ using the following syntax:
+
+```go
+fellowship := map[string]string{
+    "Frodo":   "Hobbit",
+    "Aragorn": "Man",
+    "Gimli":   "Dwarf",
+    "Legolas": "Elf",
+}
+```
+
+Lastly, you can access a boolean value that specifies if a certain key exists on a map. When you access a key on a map, the zeroed value will be returned if the value has not be defined or if the key has not been defined. The second return value when accessing a map value is helpful in distinguishing the existence of keys.
+
+```go
+andrewsScore, ok := teamScores["Andrew"]
+```
+
+### `delete()`
+
+The `delete()` builtin function is used to remove a key/value pair from a map.
+
+```go
+delete(teamScores, "Ben")
+```
+
 ## `len()`
 
 The `len()` function is an easy way to find the length of an array, slice, or map. Pass the data structure to the function and it will return the length.
@@ -67,3 +110,30 @@ The `len()` function is an easy way to find the length of an array, slice, or ma
 ## `copy()`
 
 Arrays, slices and maps can be copied with the `copy()`
+
+## `clear()`
+
+The `clear()` builtin function is used to remove all key/value pairs from a map or slice.
+
+```go
+clear(fellowship)
+```
+
+## `range`
+
+The `range` keyword allows you to iterate over keys and values in arrays, slices, and maps, as well as other data structures.
+
+It is used in a `for` loop statement and returns two values, the key/index and the value.
+
+> If you do not need the first return value of a function, you can use the `_` **blank identifier**.
+
+```go
+var totalScore int
+
+for runner, score := range teamScores {
+    fmt.Printf("%s scored %d", runner, score)
+    totalScore += score
+}
+
+fmt.Printf("Total Team Score: %d", totalScore)
+```
