@@ -46,10 +46,42 @@ func Slices() {
 	fmt.Println(chasePack)
 }
 
+func Maps() {
+	var teamScores map[string]int = make(map[string]int)
+
+	teamScores["Ben"] = 1
+	teamScores["Kane"] = 6
+	teamScores["Kevin"] = 8
+	teamScores["BG"] = 12
+	teamScores["Andrew"] = 14
+
+	fmt.Println(teamScores)
+
+	var totalScore int
+
+	for runner, score := range teamScores {
+		fmt.Printf("%s scored %d\n", runner, score)
+		totalScore += score
+	}
+
+	fmt.Printf("Total Team Score: %d\n", totalScore)
+
+	fellowship := map[string]string{
+		"Frodo":   "Hobbit",
+		"Aragorn": "Man",
+		"Gimli":   "Dwarf",
+		"Legolas": "Elf",
+	}
+
+	fmt.Println(fellowship)
+}
+
 func PrintWhatILearned() {
 	Arrays()
 
 	Slices()
+
+	Maps()
 }
 
 func main() {
