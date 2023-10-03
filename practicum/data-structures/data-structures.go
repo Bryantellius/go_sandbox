@@ -40,6 +40,8 @@ func Slices() {
 	// declaring a slice with values (not from an existing array)
 	var chasePack = []string{"Aragorn", "Legolas", "Gimli"}
 
+	chasePack = append(chasePack, "Gandalf")
+
 	fmt.Println(hobbitsWithRing)
 	fmt.Println(hobbitsWithoutRing)
 	fmt.Println(extraCharacters)

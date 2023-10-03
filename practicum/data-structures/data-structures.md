@@ -54,6 +54,10 @@ var chasePack = []string{"Aragorn", "Legolas", "Gimli"}
 
 Slices can also contain slice values to create _jagged arrays_ (collections with collection values of different lengths).
 
+### `append`
+
+The `append()` function is used to add values to end of a slice. If the slice has enough _capacity_ for the value, then the slice is re-sliced from the underlying array and  accommodates the value. If not, then a new underlying array is created to hold the new elements.
+
 ### The `slices` Package
 
 The `slices` package has many helpful functions for working with slices.
