@@ -5,6 +5,7 @@ go 1.21.1
 require (
 	github.com/fatih/color v1.15.0
 	golang.org/x/exp v0.0.0-20231006140011-7918f672742d
+	golang.org/x/tour v0.1.0
 )
 
 require (
