@@ -46,6 +46,6 @@ func Same(t1, t2 *tree.Tree) bool {
 	return slices.Compare[[]int](treeVals1, treeVals2) == 0
 }
 
-func main() {
+func CompareTrees() {
 	fmt.Println(Same(tree.New(1), tree.New(1)))
 }
