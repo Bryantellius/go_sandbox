@@ -1,25 +1,38 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"github.com/fatih/color"
-	"log"
+	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
-	log.SetPrefix("main: ")
-	log.SetFlags(0)
+	reader := *bufio.NewReader(os.Stdin)
 
-	names := []string{"Frodo", "Bilbo", "Sam"}
-	messages, err := CreateMessages(names)
+	fmt.Print("Enter you name: ")
+
+	strInput, err := reader.ReadString('\n')
 
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err.Error())
+	} else {
+		fmt.Println("Hello ", strInput)
 	}
 
-	fmt.Println(messages)
+	fmt.Print("Enter your current balance: ")
+	numInput, err := reader.ReadString('\n')
 
-	for _, message := range messages {
-		color.Green(message)
+	if err != nil {
+		fmt.Println(err.Error())
+	} else {
+		num, err := strconv.ParseFloat(strings.TrimSpace(numInput), 64)
+
+		if err != nil {
+			fmt.Println(err.Error())
+		} else {
+			fmt.Printf("You entered: %.2f", num)
+		}
 	}
 }
