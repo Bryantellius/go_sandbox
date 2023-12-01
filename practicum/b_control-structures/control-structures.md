@@ -45,6 +45,8 @@ A `switch` case allows you to evaluate multiple conditionals in one structure. T
 
 > The condition can be omitted to evaluate for `switch true`.
 
+> If you want to enable functionality similar to the `break` keyword in other languages, you can use the `fallthrough` keyword.
+
 ```go
 birthMonth := 1
 var monthStr string
