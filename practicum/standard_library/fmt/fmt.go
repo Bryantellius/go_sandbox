@@ -62,11 +62,14 @@ func main() {
 	// reading from standard input
 
 	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Println("Enter your name: ")
+
 	s, err := reader.ReadString('\n')
 
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(s)
+	fmt.Println("Hello", s)
 }

@@ -30,7 +30,16 @@ fmt.Println("This ends the string with a newline.")
 
 ## Formatting
 
-There are two main functions in the `fmt` package for formatting string outputs: `Printf` and `Sprintf`. There are many _verbs_ or _flags_ used to control the formatting.
+There are two main functions in the `fmt` package for formatting string outputs: `Printf` and `Sprintf`. There are many _verbs_ or _flags_ used to control the formatting. Below are some common formatting verbs in Go:
+
+| Verb | Description           |
+| ---- | --------------------- |
+| `%d` | base 10 integer       |
+| `%f` | floating point number |
+| `%t` | boolean               |
+| `%v` | default value format  |
+| `%T` | value type            |
+| `%s` | string                |
 
 ### `Printf`
 
@@ -62,3 +71,22 @@ output := fmt.Sprintf("%s was %d when he started his journey.", name, age)
 
 ## Reading Input from Standard Input
 
+One way to read input from standard input in Goland is to use functions from the `bufio` and `os` packages.
+
+You can use the `bufio.NewReader` function and pass in the `os.Stdin` variable to create a buffered I/O reader based on the OS's standard input. From there, you can call the `io.Reader`'s `ReadString` method to read strings that are inputted via the standard input, and then use those values in your program.
+
+> The `io.Reader` has other methods that can allow you to read more than just string values.
+
+```go
+reader := bufio.NewReader(os.Stdin)
+
+fmt.Println("Enter your name: ")
+
+s, err := reader.ReadString('\n')
+
+if err != nil {
+    panic(err)
+}
+
+fmt.Println("Hello", s)
+```
