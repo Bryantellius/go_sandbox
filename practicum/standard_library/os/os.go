@@ -31,5 +31,4 @@ func checkIfFileExists(filePath string) bool {
 }
 
 func createFile(data []byte, filePath string) {
-os.WriteFile(filePath, data, os.)
 }
