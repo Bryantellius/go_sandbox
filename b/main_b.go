@@ -8,6 +8,8 @@ import (
 func DoSomething() {
 	fmt.Println("Beginning B...")
 
+	fmt.Println("Be is for Be Cool.")
+
 	beCool()
 }
 
