@@ -9,5 +9,7 @@ import (
 func DoSomething() {
 	fmt.Println("Beginning A...")
 
+	fmt.Printf("A for addition. 1 + 1 = %d\n", Sum(1, 1))
+
 	b.DoSomething()
 }
