@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"regexp"
@@ -7,7 +7,7 @@ import (
 
 func TestCreateMessage(t *testing.T) {
 	name := "Frodo"
-	message, err := CreateMessage(name)
+	message, err := utils.CreateMessage(name)
 	want := regexp.MustCompile(`\\s` + name + `$`)
 
 	if want.MatchString(message) || err != nil {
