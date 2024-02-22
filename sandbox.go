@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func main() {
+func GetInput() {
 	reader := *bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter you name: ")
