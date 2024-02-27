@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	DoCallStack()
+	DoQueue()
 }
 
 func DoCallStack() {
@@ -25,5 +25,20 @@ func DoCallStack() {
 	callStack.ShowStack()
 	callStack.Pop()
 	callStack.ShowStack()
+	fmt.Println("Finished")
+}
+
+func DoQueue() {
+	fmt.Println("Starting")
+	queue := algos.CreateQueue()
+	queue.Enqueue(1)
+	queue.Enqueue(2)
+	queue.Enqueue(3)
+	fmt.Println(queue.Peak()) // should be 1
+	fmt.Println(queue.Rear()) // should be 3
+	fmt.Printf("Processing %d...\n", queue.Dequeue()) // should be 1
+	fmt.Println(queue.Peak()) // should be 2
+	queue.Enqueue(4)
+	fmt.Println(queue.Rear()) // should be 4
 	fmt.Println("Finished")
 }
