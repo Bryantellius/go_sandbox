@@ -7,7 +7,7 @@ import (
 
 func TestCreateMessage(t *testing.T) {
 	name := "Frodo"
-	message, err := utils.CreateMessage(name)
+	message, err := CreateMessage(name)
 	want := regexp.MustCompile(`\\s` + name + `$`)
 
 	if want.MatchString(message) || err != nil {
