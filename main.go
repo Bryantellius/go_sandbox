@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	DoQueue()
+	DoBatch()
 }
 
 func DoCallStack() {
@@ -34,11 +34,15 @@ func DoQueue() {
 	queue.Enqueue(1)
 	queue.Enqueue(2)
 	queue.Enqueue(3)
-	fmt.Println(queue.Peak()) // should be 1
-	fmt.Println(queue.Rear()) // should be 3
+	fmt.Println(queue.Peak())                         // should be 1
+	fmt.Println(queue.Rear())                         // should be 3
 	fmt.Printf("Processing %d...\n", queue.Dequeue()) // should be 1
-	fmt.Println(queue.Peak()) // should be 2
+	fmt.Println(queue.Peak())                         // should be 2
 	queue.Enqueue(4)
 	fmt.Println(queue.Rear()) // should be 4
 	fmt.Println("Finished")
+}
+
+func DoBatch() {
+	algos.RunBatch("./data/commands.txt")
 }
