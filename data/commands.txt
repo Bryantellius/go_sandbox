@@ -1,0 +1,6 @@
+open explorer
+navigate netflix.com
+play peaky_blinders
+sit couch
+eat popcorn
+enjoy 100
