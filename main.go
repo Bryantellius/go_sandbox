@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	DoBatch()
+	DoStackProcessor()
 }
 
 func DoCallStack() {
@@ -26,6 +26,30 @@ func DoCallStack() {
 	callStack.Pop()
 	callStack.ShowStack()
 	fmt.Println("Finished")
+}
+
+func DoStackProcessor() {
+	processer := algos.CreateStackHandler()
+	stackA := algos.CreateStack()
+	stackB := algos.CreateStack()
+	stackC := algos.CreateStack()
+	
+	stackA.Push("A: func Apple()")
+	stackA.Push("A: func Awesome()")
+	stackA.Push("A: func Antagonism()")
+	stackB.Push("B: func Banana()")
+	stackB.Push("B: func Boring()")
+	stackB.Push("B: func Belittling()")
+	stackB.Push("B: func Brute()")
+	stackB.Push("B: func Benefit()")
+	stackC.Push("C: func Carrot()")
+	stackC.Push("C: func Capture()")
+
+	processer.Push(stackA)
+	processer.Push(stackB)
+	processer.Push(stackC)
+
+	processer.ProcessStacks()
 }
 
 func DoQueue() {
