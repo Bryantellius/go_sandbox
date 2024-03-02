@@ -7,24 +7,24 @@ import (
 // Write a program to create a stack (LIFO) which can store any number of local variables for each subroutine.
 // Hint: use a linked list for the stack and local variables
 
-type LinkedList struct {
+type StackNode struct {
 	value string
-	next  *LinkedList
+	next  *StackNode
 }
 
 type Stack struct {
-	stackPointer *LinkedList
+	stackPointer *StackNode
 }
 
 func CreateStack() (s *Stack) {
-	s = &Stack{stackPointer: &LinkedList{}}
+	s = &Stack{stackPointer: &StackNode{}}
 	return
 }
 
 func (s *Stack) Push(signature string) {
 	fmt.Printf("Pushing %s...\n", signature)
 	next := s.stackPointer
-	s.stackPointer = &LinkedList{value: signature, next: next}
+	s.stackPointer = &StackNode{value: signature, next: next}
 }
 
 func (s *Stack) Pop() string {
