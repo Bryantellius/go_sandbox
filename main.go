@@ -29,11 +29,11 @@ func DoCallStack() {
 }
 
 func DoStackProcessor() {
-	processer := algos.CreateStackHandler()
+	processor := algos.CreateStackHandler()
 	stackA := algos.CreateStack()
 	stackB := algos.CreateStack()
 	stackC := algos.CreateStack()
-	
+
 	stackA.Push("A: func Apple()")
 	stackA.Push("A: func Awesome()")
 	stackA.Push("A: func Antagonism()")
@@ -45,11 +45,11 @@ func DoStackProcessor() {
 	stackC.Push("C: func Carrot()")
 	stackC.Push("C: func Capture()")
 
-	processer.Push(stackA)
-	processer.Push(stackB)
-	processer.Push(stackC)
+	processor.Push(stackA)
+	processor.Push(stackB)
+	processor.Push(stackC)
 
-	processer.ProcessStacks()
+	processor.ProcessStacks()
 }
 
 func DoQueue() {
