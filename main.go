@@ -4,10 +4,14 @@ import (
 	"fmt"
 
 	"github.com/Bryantellius/go_sandbox/algos"
+	getgrid "github.com/Bryantellius/go_sandbox/get_grid"
 )
 
 func main() {
-	DoStackProcessor()
+	file1 := "./data/cera_getGrid_output_without_change.csv"
+	file2 := "./data/cera_getGrid_output_with_change.csv"
+	outputFile := "./data/cera_getGrid_out_distinct.csv"
+	getgrid.CompareCSVsAndRemoveDuplicates(file1, file2, outputFile)
 }
 
 func DoCallStack() {
